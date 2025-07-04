@@ -14,39 +14,45 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Field Data Collection App",
-    description: "A React Native application for field data collection and analysis, built with EdgeDB backend integration. Features real-time data sync and offline capabilities.",
-    technologies: ["React Native", "TypeScript", "EdgeDB", "Node.js"],
+    title: "Hospitality Hub",
+    description: "An application allowing businesses and employees to register, login, post jobs, apply to jobs, and rate each other. Developed in a 3-person team with a 10-day timeframe. Responsible for implementing the back-end and profile pages with rating functionality.",
+    image: "https://i.imgur.com/l3crfLq.png",
+    technologies: ["Python", "Django", "PostgreSQL", "React", "Express"],
+    githubUrl: "https://github.com/miskhill/Project4#readme",
     featured: true,
   },
   {
-    title: "Educational Game Suite",
-    description: "Three Phaser3 games designed for educational purposes, featuring interactive gameplay, progress tracking, and engaging animations for young learners.",
-    technologies: ["Phaser3", "JavaScript", "HTML5", "CSS3"],
+    title: "GCW Esports",
+    description: "Quick access to popular Esport games rated by peers. League of Legends based and themed. Developed in a 3-person team with a 10-day timeframe. Implemented back-end setup, functionality for likes and views, and styling with Bootstrap and CSS.",
+    image: "https://i.imgur.com/oAyjrg2.jpg",
+    technologies: ["React", "Express", "MongoDB", "Mongoose"],
+    githubUrl: "https://github.com/CosmasC128/Project-3#readme",
+    liveUrl: "https://vjbhtocsid.eu10.qoddiapp.com/",
     featured: true,
   },
   {
-    title: "E-commerce Platform Components",
-    description: "Next.js components integrated with Shopify Polaris design system, featuring responsive design and modern UI patterns for enhanced user experience.",
-    technologies: ["Next.js", "TypeScript", "Shopify Polaris", "React"],
-    githubUrl: "https://github.com/miskhill",
+    title: "Connect 4",
+    description: "Classic desktop game built with vanilla JavaScript, CSS, and HTML. Developed in a 7-day timeframe as a solo project.",
+    image: "https://i.imgur.com/zAxT5UI.png",
+    technologies: ["JavaScript", "CSS", "HTML"],
+    githubUrl: "https://github.com/miskhill/Project1#readme",
+    liveUrl: "https://miskhill.github.io/Project1/",
   },
   {
-    title: "Fundraising Analytics Dashboard",
-    description: "Full-stack application with MongoDB integration, featuring error monitoring with Sentry, optimized queries, and cost-effective GCP deployment.",
-    technologies: ["React", "MongoDB", "Node.js", "GCP", "Sentry"],
-    githubUrl: "https://github.com/miskhill",
+    title: "Random Movie Generator",
+    description: "Save time deciding what movie to watch by randomizing your choice. Built in a 48-hour timeframe as part of a 2-person team. Responsible for implementing the API and accessing all relevant information.",
+    image: "https://i.imgur.com/HjjLtGN.jpg",
+    technologies: ["React", "JavaScript", "HTML", "CSS", "Bootstrap"],
+    githubUrl: "https://github.com/miskhill/Project-2#readme",
+    liveUrl: "https://movieproject2.netlify.app",
   },
   {
-    title: "CI/CD Pipeline Implementation",
-    description: "Automated deployment pipeline using GitHub Actions, Python to TypeScript migration, and comprehensive testing suite for improved developer experience.",
-    technologies: ["GitHub Actions", "TypeScript", "Python", "Docker"],
-    githubUrl: "https://github.com/miskhill",
-  },
-  {
-    title: "Restaurant Management System",
-    description: "Business management application for multi-site restaurant operations, featuring P&L tracking, employee management, and operational analytics.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Express"],
+    title: "Smoothie App",
+    description: "A modern web application for smoothie recipes and management. Built with React and Supabase for backend functionality.",
+    image: "https://user-images.githubusercontent.com/80961839/193401162-800c2987-5867-4834-bacb-60d268fbe6e0.png",
+    technologies: ["React", "Supabase", "JavaScript"],
+    githubUrl: "https://github.com/miskhill/Supabase-and-React#readme",
+    liveUrl: "https://smoothie-app.netlify.app/",
   },
 ];
 
@@ -105,12 +111,22 @@ export function ProjectSection() {
                 project.featured ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >
-              {/* Project Image Placeholder */}
-              <div className="h-36 sm:h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="text-4xl sm:text-6xl text-primary/30">
-                  {project.title.charAt(0)}
+              {/* Project Image or Placeholder */}
+              {project.image ? (
+                <div className="h-36 sm:h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className="h-36 sm:h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                  <div className="text-4xl sm:text-6xl text-primary/30">
+                    {project.title.charAt(0)}
+                  </div>
+                </div>
+              )}
 
               {/* Project Content */}
               <div className="p-4 sm:p-6">
@@ -130,20 +146,20 @@ export function ProjectSection() {
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4 overflow-x-auto xs:overflow-x-auto scrollbar-hide">
+                <div className="flex flex-wrap gap-3 sm:gap-4 mb-3 sm:mb-4 overflow-x-auto xs:overflow-x-auto scrollbar-hide">
                   {project.technologies.map((tech, techIndex) => (
                     <div
                       key={techIndex}
-                      className="flex items-center gap-1 px-1 sm:px-2 py-1 bg-muted rounded-md text-xs whitespace-nowrap"
+                      className="flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 bg-muted rounded-md text-xs whitespace-nowrap my-1"
                     >
-                      <TechIcon technology={tech} size={10} className="hidden sm:block" />
-                      <span className="text-muted-foreground text-xs">{tech}</span>
+                      <TechIcon technology={tech} size={12} className="hidden sm:block" />
+                      <span className="text-muted-foreground text-xs font-medium">{tech}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Project Links */}
-                <div className="flex items-center gap-2 sm:gap-3">
+                <div className="flex items-center justify-start gap-4 sm:gap-6 mt-4 sm:mt-5 pt-2 sm:pt-3 border-t border-border">
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
