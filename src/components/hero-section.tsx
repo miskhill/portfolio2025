@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 export function HeroSection() {
   const containerVariants = {
@@ -92,39 +92,18 @@ export function HeroSection() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-card border border-border transition-all duration-300 hover:scale-110 hover:shadow-lg ${link.color}`}
+                  className={`flex items-center justify-center w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-full bg-card border border-border transition-all duration-300 hover:scale-110 hover:shadow-lg ${link.color}`}
                   aria-label={link.label}
                 >
-                  <link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <link.icon className="w-6 h-6 sm:w-[30px] sm:h-[30px]" />
                 </a>
               ))}
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <button className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 text-sm sm:text-base">
-              <FaDownload className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-              Download Resume
-            </button>
-          </motion.div>
+
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-muted-foreground rounded-full flex justify-center items-start p-2">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-2 sm:h-3 bg-muted-foreground rounded-full"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

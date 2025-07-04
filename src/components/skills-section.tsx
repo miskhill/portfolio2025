@@ -105,8 +105,7 @@ export function SkillsSection() {
                     className="flex flex-col items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg bg-background border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105"
                     whileHover={{ y: -2 }}
                   >
-                    <TechIcon technology={skill} size={24} className="text-primary sm:hidden" />
-                    <TechIcon technology={skill} size={32} className="text-primary hidden sm:block" />
+                    <TechIcon technology={skill} size={28} className="text-primary" />
                     <span className="text-xs sm:text-sm font-medium text-center text-muted-foreground line-clamp-2">
                       {skill}
                     </span>

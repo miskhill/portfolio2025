@@ -1,10 +1,9 @@
 import { ThemeProvider } from './context/ThemeProvider';
 import { Header } from './components/Header';
 import { HeroSection } from './components/hero-section';
-import { CareerSection } from './components/career-section';
+import { ExperienceSection } from './components/ExperienceSection';
 import { ProjectSection } from './components/project-section';
 import { SkillsSection } from './components/skills-section';
-import { EducationSection } from './components/EducationSection';
 import { Footer } from './components/footer';
 
 function App() {
@@ -14,10 +13,9 @@ function App() {
         <Header />
         <main className="w-full max-w-full overflow-x-hidden">
           <HeroSection />
-          <CareerSection />
+          <ExperienceSection />
           <ProjectSection />
           <SkillsSection />
-          <EducationSection />
         </main>
         <Footer />
       </div>

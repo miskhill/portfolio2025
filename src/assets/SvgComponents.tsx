@@ -1,4 +1,7 @@
 import React from 'react';
+import { SiPostgresql, SiExpress, SiNestjs, SiGraphql, SiDjango, SiMongoose, SiAmazon, SiGooglecloud, SiGithubactions, SiGitkraken } from 'react-icons/si';
+import { TbBrandReactNative } from 'react-icons/tb';
+import { MdBusiness } from 'react-icons/md';
 
 interface SvgIconProps {
   className?: string;
@@ -82,13 +85,31 @@ export const TechIcon: React.FC<TechIconProps> = ({ technology, className = "", 
     javascript: JavaScriptIcon,
     typescript: TypeScriptIcon,
     react: ReactIcon,
+    "react native": ({ className = "", size = 24 }) => <TbBrandReactNative className={className} size={size} />,
+    reactnative: ({ className = "", size = 24 }) => <TbBrandReactNative className={className} size={size} />,
     nodejs: NodeIcon,
     node: NodeIcon,
     python: PythonIcon,
     nextjs: NextJSIcon,
     "next.js": NextJSIcon,
+    express: ({ className = "", size = 24 }) => <SiExpress className={className} size={size} />,
+    "nest.js": ({ className = "", size = 24 }) => <SiNestjs className={className} size={size} />,
+    nestjs: ({ className = "", size = 24 }) => <SiNestjs className={className} size={size} />,
+    graphql: ({ className = "", size = 24 }) => <SiGraphql className={className} size={size} />,
+    django: ({ className = "", size = 24 }) => <SiDjango className={className} size={size} />,
     mongodb: MongoDBIcon,
+    postgresql: ({ className = "", size = 24 }) => <SiPostgresql className={className} size={size} />,
+    postgres: ({ className = "", size = 24 }) => <SiPostgresql className={className} size={size} />,
+    edgedb: ({ className = "", size = 24 }) => <div className={`flex items-center justify-center bg-primary/10 rounded text-xs font-medium text-primary ${className}`} style={{ width: size, height: size }}>ED</div>,
+    mongoose: ({ className = "", size = 24 }) => <SiMongoose className={className} size={size} />,
     docker: DockerIcon,
+    aws: ({ className = "", size = 24 }) => <SiAmazon className={className} size={size} />,
+    "amazon web services": ({ className = "", size = 24 }) => <SiAmazon className={className} size={size} />,
+    gcp: ({ className = "", size = 24 }) => <SiGooglecloud className={className} size={size} />,
+    "google cloud": ({ className = "", size = 24 }) => <SiGooglecloud className={className} size={size} />,
+    "github actions": ({ className = "", size = 24 }) => <SiGithubactions className={className} size={size} />,
+    gitkraken: ({ className = "", size = 24 }) => <SiGitkraken className={className} size={size} />,
+    "business management": ({ className = "", size = 24 }) => <MdBusiness className={className} size={size} />,
     git: GitIcon,
     html5: HTMLIcon,
     html: HTMLIcon,

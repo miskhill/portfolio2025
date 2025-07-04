@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaHeart } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaArrowUp } from 'react-icons/fa';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
 
   const contactLinks = [
     {
@@ -29,73 +28,55 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Branding */}
           <div className="text-center md:text-left">
             <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">Gary Smith</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 px-4 sm:px-0">
-              Software Developer passionate about creating innovative solutions and continuous learning.
-            </p>
-            <p className="text-xs sm:text-sm text-muted-foreground">
+            <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-8 md:mb-4">
+              Software Developer passionate about creating
+              <br />
+              innovative solutions and continuous learning.
+              <br />
               Nottingham, England
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-center">
-            <h4 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">Quick Links</h4>
-            <nav className="space-y-1 sm:space-y-2">
-              {['Home', 'Experience', 'Projects', 'Skills', 'Education'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => {
-                    const element = document.getElementById(item.toLowerCase());
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors duration-200 mx-auto py-1"
-                >
-                  {item}
-                </button>
-              ))}
-            </nav>
-          </div>
+
 
           {/* Contact */}
-          <div className="text-center md:text-right">
+          <div className="text-center md:text-right mt-4 md:mt-0">
             <h4 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">Connect</h4>
-            <div className="flex justify-center md:justify-end space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+            <div className="flex justify-center md:justify-end space-x-4 sm:space-x-5 mb-8 sm:mb-10">
               {contactLinks.map((link, index) => (
                 <motion.a
                   key={index}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="flex items-center justify-center w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-full bg-card border border-border shadow-sm hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-md transition-all duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={link.label}
                 >
-                  <link.icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <link.icon className="w-6 h-6 sm:w-[30px] sm:h-[30px]" />
                 </motion.a>
               ))}
             </div>
-            <button
-              onClick={scrollToTop}
-              className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Back to top ↑
-            </button>
+            <div className="mt-8 sm:mt-10">
+              <motion.button
+                onClick={scrollToTop}
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300 mx-auto md:ml-auto md:mr-0"
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Back to top"
+              >
+                <FaArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
+              </motion.button>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
-          <p className="text-xs sm:text-sm text-muted-foreground flex flex-wrap items-center justify-center gap-1 sm:gap-2">
-            © {currentYear} Gary Smith. Built with
-            <FaHeart className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-red-500" />
-            using React & TypeScript
-          </p>
-        </div>
+
       </div>
     </footer>
   );

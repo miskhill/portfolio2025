@@ -1,0 +1,677 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Error 404 | Page not found</title>
+    <link rel="shortcut icon" href="https://givepanel.com/hubfs/GivePanel_website/Images/favicon.png">
+    <meta name="description" content="">
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="">
+    <meta property="og:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="">
+
+    
+
+    
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="https://givepanel.com/hs-fs/hubfs/hub_generated/template_assets/1/114026581076/1741482664303/template_main.min.css">
+<link rel="stylesheet" href="https://givepanel.com/hs-fs/hubfs/hub_generated/template_assets/1/114027119140/1741482670223/template_system.min.css">
+<link rel="stylesheet" href="https://givepanel.com/hs-fs/hubfs/hub_generated/template_assets/1/114026921752/1741482669548/template_theme-overrides.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CKalam%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=6.2">
+<link rel="stylesheet" href="https://givepanel.com/hs-fs/hubfs/hub_generated/module_assets/1/114026805271/1741436930381/module_button.min.css">
+<link rel="stylesheet" href="https://givepanel.com/hs-fs/hubfs/hub_generated/module_assets/1/114032733493/1741436935905/module_Footer.min.css">
+<style>
+  @font-face {
+    font-family: "Heebo";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Heebo/700.woff2") format("woff2"), url("/_hcms/googlefonts/Heebo/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Heebo";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Heebo/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Heebo/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Heebo";
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Heebo/500.woff2") format("woff2"), url("/_hcms/googlefonts/Heebo/500.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Heebo";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Heebo/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Heebo/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Kalam";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Kalam/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Kalam/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Kalam";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Kalam/700.woff2") format("woff2"), url("/_hcms/googlefonts/Kalam/700.woff") format("woff");
+  }
+</style>
+
+    
+
+    
+<!--  Added by GoogleTagManager integration -->
+<script>
+var _hsp = window._hsp = window._hsp || [];
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+var useGoogleConsentModeV2 = true;
+var waitForUpdateMillis = 1000;
+
+
+
+var hsLoadGtm = function loadGtm() {
+    if(window._hsGtmLoadOnce) {
+      return;
+    }
+
+    if (useGoogleConsentModeV2) {
+
+      gtag('set','developer_id.dZTQ1Zm',true);
+
+      gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': waitForUpdateMillis
+      });
+
+      _hsp.push(['useGoogleConsentModeV2'])
+    }
+
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M5HPPJH');
+
+    window._hsGtmLoadOnce = true;
+};
+
+_hsp.push(['addPrivacyConsentListener', function(consent){
+  if(consent.allowed || (consent.categories && consent.categories.analytics)){
+    hsLoadGtm();
+  }
+}]);
+
+</script>
+
+<!-- /Added by GoogleTagManager integration -->
+
+    <link rel="canonical" href="https://givepanel.com/404">
+
+
+<meta property="og:url" content="https://givepanel.com/404">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+  <meta name="generator" content="HubSpot"></head>
+  <body>
+<!--  Added by GoogleTagManager integration -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5HPPJH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- /Added by GoogleTagManager integration -->
+
+    <div class="body-wrapper   hs-content-id-0 hs-site-page page ">
+      
+      <div data-global-resource-path="GivePanel_May_2023_Theme/templates/partials/header.html"><div id="hs_cos_wrapper_module_16830931371171" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+<div class="header-outer-wrapper">
+  <header class="header-wrapper">
+    <div class="content-wrapper Nopadded-container">
+      <div class="inner-wrapper">
+        
+        <div class="logo-img">
+          <a href="https://givepanel.com">
+
+            
+            
+            
+            
+            
+            <img src="https://givepanel.com/hubfs/GivePanel_website_image/Images/GivePanel_GivePanelLogo_Pink.svg" alt="GivePanel" loading="lazy" width="300" height="96" style="max-width: 100%; height: auto;">
+
+          </a>
+        </div>
+        
+        <button class="menu-hamburger">
+          <span class="menu-hamburger-icon"></span>
+          <span class="menu-hamburger-icon"></span>
+          <span class="menu-hamburger-icon"></span>
+        </button>
+        <div class="header-menu">
+          <div class="mobile-top">
+            
+            <div class="logo">
+              <a class="nav-logo" href="https://givepanel.com">
+                <img width="1775" height="565" src="https://givepanel.com/hubfs/GivePanel_website_image/Images/GivePanel_GivePanelLogo_Pink.svg" alt="GivePanel" loading="lazy">	
+              </a>
+            </div>
+            
+            <button class="close-toggler" type="button">X</button>
+          </div>
+          <ul class="menu-list">
+            
+            
+            
+            <li>
+              
+              <a class="menu-item-link " href="https://givepanel.com/features">
+                Features
+                
+                
+              </a>
+              
+            </li>
+            
+            
+            
+            <li>
+              
+              <a class="menu-item-link " href="https://givepanel.com/use-cases">
+                Use Cases
+                
+                
+              </a>
+              
+            </li>
+            
+            
+            
+            <li>
+              
+              <a class="menu-item-link " href="https://givepanel.com/pricing/">
+                Pricing
+                
+                
+              </a>
+              
+            </li>
+            
+            
+            
+            <li>
+              
+              <a class="menu-item-link menu-item-link--dropdown" href="">
+                Resources
+                
+                <i class="icon icon-down-arrow1"></i>
+                <div class="trigger"></div>
+                
+                
+              </a>
+              
+              <div class="mega-menu">
+                <div class="content-wrapper Nopadded-container">
+                  <div class="inner-wrapper">
+                    <div class="col1">
+                      
+                      <div class="title">
+                        <h2>Resources</h2>
+                      </div>
+                      
+                      <div class="items-wrapper">
+                        
+                        <div class="items">
+                          
+                          <div class="item">
+                            
+                            <div class="img">
+                              <a href="">
+                                <img src="https://givepanel.com/hubfs/GivePanel_website/Images/blog.png" alt="blog" loading="lazy">
+                              </a>
+                            </div>
+                            
+                            <div class="content">
+                              
+                              <span class="box-title">
+                                
+                                
+                                <a href="https://givepanel.com/blog">
+                                  Blog</a></span>
+                              
+                              
+                              <p class="box-description">Tips, expert advice and best practice to unlock the power of Facebook Fundraising for your organization.</p>
+                              
+                            </div>
+                          </div>
+                          
+                          <div class="item">
+                            
+                            <div class="img">
+                              <a href="https://givepanel.com/blog" target="_blank" rel="noopener">
+                                <img src="https://givepanel.com/hubfs/GivePanel_website/Images/help-support.png" alt="help support" loading="lazy">
+                              </a>
+                            </div>
+                            
+                            <div class="content">
+                              
+                              <span class="box-title">
+                                
+                                
+                                <a href="https://help.givepanel.com/" target="_blank" rel="noopener">
+                                  Help and Support</a></span>
+                              
+                              
+                              <p class="box-description">Explore our Knowledge Base for how-to and troubleshooting articles to help you make the most of the GivePanel platform.</p>
+                              
+                            </div>
+                          </div>
+                          
+                        </div>
+                        
+                        <div class="items">
+                          
+                          <div class="item">
+                            
+                            <div class="img">
+                              <a href="">
+                                <img src="https://givepanel.com/hubfs/GivePanel_website/Images/success-stories.png" alt="Success stories" loading="lazy">
+                              </a>
+                            </div>
+                            
+                            <div class="content">
+                              
+                              <span class="box-title">
+                                
+                                
+                                <a href="https://givepanel.com/success-stories/">
+                                  Success Stories</a></span>
+                              
+                              
+                              <p class="box-description">Learn how nonprofits are shaking up the world of social fundraising and how GivePanel supports them to succeed.</p>
+                              
+                            </div>
+                          </div>
+                          
+                          <div class="item">
+                            
+                            <div class="content">
+                              
+                              
+                            </div>
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                    <div class="col2">
+                      <div class="inner-col">
+                        
+                        <h2>Featured Reads</h2>
+                        
+                        <div class="posts">
+                          
+                          <div class="post-item">
+                            <a href="https://givepanel.com/blog/lead-ad-performance-tool-real-time-insights-for-smarter-fundraising">
+                              <div class="post-img" style="background-image:url(https://givepanel.com/hubfs/Blog%20%281%29.png);"></div>
+                            </a>
+                            <div class="post-title">
+                              <h3><a href="https://givepanel.com/blog/lead-ad-performance-tool-real-time-insights-for-smarter-fundraising">Lead Ad Performance Tool: Real-Time Insights for Smarter Fundraising </a></h3>
+                            </div>
+                          </div>
+                          
+                          <div class="post-item">
+                            <a href="https://givepanel.com/blog/how-nonprofits-can-succeed-with-instagram-fundraising">
+                              <div class="post-img" style="background-image:url(https://givepanel.com/hubfs/How%20nonprofits%20can%20succeed%20with%20Instagram%20fundraising%20Challenges.png);"></div>
+                            </a>
+                            <div class="post-title">
+                              <h3><a href="https://givepanel.com/blog/how-nonprofits-can-succeed-with-instagram-fundraising">How nonprofits can succeed with Instagram fundraising Challenges </a></h3>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+            </li>
+            
+          </ul>
+        </div>
+        <div class="overlay"></div>
+        
+        <div class="btn-1">
+          
+          
+          <a href="https://app.givepanel.com/login" class="link-button" target="_blank" rel="noopener">
+            Sign in
+          </a>
+        </div>
+        
+        
+        <div class="btn-2">
+          
+          
+          <a href="https://givepanel.com/demo/" class="hs-button">
+            Get a Demo
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </header>
+</div></div></div>
+      
+
+      
+
+      <main id="main-content" class="body-container-wrapper">
+        
+<section class="content-wrapper">
+  <div class="error-page" data-error="404">
+    <div id="hs_cos_wrapper_content" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_content_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h1>Page not found.</h1></span></div>
+    <div id="hs_cos_wrapper_button" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+<div class="button-wrapper wow fadeIn" style="text-align:left;">
+  <a class="hs-button" href="https://givepanel.com">
+    Go Home
+  </a>
+</div></div>
+  </div>
+</section>
+
+      </main>
+
+      
+      <div data-global-resource-path="GivePanel_May_2023_Theme/templates/partials/footer.html"><div id="hs_cos_wrapper_module_16830284538462" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><footer class="footer-wrapper">
+  <div class="footer-top">
+    <div class="content-wrapper  Nopadded-container">
+      <div class="inner-wrapper">
+        
+        <div class="logo-img">
+          
+          
+          
+          
+          
+          <img src="https://givepanel.com/hubfs/GivePanel_website_image/Images/GivePanel_GivePanelLogo_Pink.svg" alt="GivePanel_GivePanelLogo_Pink" loading="lazy" width="300" height="96" style="max-width: 100%; height: auto;">
+        </div>
+        
+        <div class="fmenu-wrapper">
+          
+          <div class="fmenu">
+            <span id="hs_cos_wrapper_module_16830284538462_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu"><div id="hs_menu_wrapper_module_16830284538462_" class="hs-menu-wrapper active-branch no-flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="default" data-menu-id="114199967045" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">GivePanel</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/about/" role="menuitem">About Us</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/careers/" role="menuitem">Join the Team</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/contact/" role="menuitem">Get in Touch</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Partners</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/become-a-givepanel-partner/" role="menuitem">Become a Partner</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/trusted-social-fundraising-partners" role="menuitem">Partner Marketplace</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Legal</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/legal-terms/" role="menuitem">Terms of Service</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/privacy/" role="menuitem">Privacy Notice</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://givepanel.com/cookie-policy/" role="menuitem">Cookie Policy</a></li>
+   </ul></li>
+ </ul>
+</div></span>
+          </div>
+          
+          <li class="hs-menu-item hs-menu-depth-1 socials-wrp">
+            <div class="socials">
+              
+              <div class="ftitle">
+                <p>Connect with us</p>
+              </div>
+              
+              <div class="icons">
+                
+                
+                
+                
+                <a href="https://www.linkedin.com/company/givepanel/" target="_blank" rel="noopener">
+                  
+                  <img src="https://givepanel.com/hubfs/GivePanel_website_image/Images/linkedin.svg" alt="linkedin" loading="lazy" width="300" height="96" style="max-width: 100%; height: auto;">
+                </a>
+                
+                
+                
+                
+                
+                <a href="https://twitter.com/givepanel" target="_blank" rel="noopener">
+                  
+                  <img src="https://givepanel.com/hs-fs/hubfs/GivePanel_website/Images/twitter-x-logo-dark.png?width=300&amp;height=96&amp;name=twitter-x-logo-dark.png" alt="twitter-x-logo-dark" loading="lazy" width="300" height="96" style="max-width: 100%; height: auto;" srcset="https://givepanel.com/hs-fs/hubfs/GivePanel_website/Images/twitter-x-logo-dark.png?width=150&amp;height=48&amp;name=twitter-x-logo-dark.png 150w, https://givepanel.com/hs-fs/hubfs/GivePanel_website/Images/twitter-x-logo-dark.png?width=300&amp;height=96&amp;name=twitter-x-logo-dark.png 300w, https://givepanel.com/hs-fs/hubfs/GivePanel_website/Images/twitter-x-logo-dark.png?width=450&amp;height=144&amp;name=twitter-x-logo-dark.png 450w, https://givepanel.com/hs-fs/hubfs/GivePanel_website/Images/twitter-x-logo-dark.png?width=600&amp;height=192&amp;name=twitter-x-logo-dark.png 600w, https://givepanel.com/hs-fs/hubfs/GivePanel_website/Images/twitter-x-logo-dark.png?width=750&amp;height=240&amp;name=twitter-x-logo-dark.png 750w, https://givepanel.com/hs-fs/hubfs/GivePanel_website/Images/twitter-x-logo-dark.png?width=900&amp;height=288&amp;name=twitter-x-logo-dark.png 900w" sizes="(max-width: 300px) 100vw, 300px">
+                </a>
+                
+                
+                
+                
+                
+                <a href="https://www.facebook.com/givepanel/" target="_blank" rel="noopener">
+                  
+                  <img src="https://givepanel.com/hubfs/GivePanel_website_image/Images/facebook.svg" alt="facebook" loading="lazy" width="300" height="96" style="max-width: 100%; height: auto;">
+                </a>
+                
+                
+              </div>
+              <div class="btn-wrap">
+                
+                
+                
+                <a href="https://givepanel.com/newsletter-sign-up/" class="secondary-btn">
+                  Join our Mailing List
+                </a>
+                
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="featured-reads">
+          
+          <div class="ftitle">
+            <p>Featured Reads</p>
+          </div>
+          
+          <div class="posts">
+            
+            <div class="post-item">
+              <a href="https://givepanel.com/blog/how-to-plan-the-perfect-facebook-challenge-in-2024">
+                <div class="post-img" style="background-image:url(https://givepanel.com/hubfs/How%20to%20plan%20the%20perfect%20Facebook%20Challenge%20in%202024%20.png);">
+                </div>
+              </a>
+              <div class="post-title">
+                <h3><a href="https://givepanel.com/blog/how-to-plan-the-perfect-facebook-challenge-in-2024">How to plan the perfect Facebook Challenge in 2024 </a></h3>
+              </div>
+            </div>
+            
+            <div class="post-item">
+              <a href="https://givepanel.com/blog/the-complete-guide-to-facebook-charitable-giving-tools-for-nonprofits">
+                <div class="post-img" style="background-image:url(https://givepanel.com/hubfs/GivePanel_website/Blog%20featured%20images/Blog-banners-new-website.png);">
+                </div>
+              </a>
+              <div class="post-title">
+                <h3><a href="https://givepanel.com/blog/the-complete-guide-to-facebook-charitable-giving-tools-for-nonprofits">The complete guide to Facebook Charitable Giving Tools for nonprofits </a></h3>
+              </div>
+            </div>
+            
+            <div class="post-item">
+              <a href="https://givepanel.com/blog/is-your-nonprofit-the-right-fit-for-a-facebook-challenge-quiz">
+                <div class="post-img" style="background-image:url(https://givepanel.com/hubfs/GivePanel_website/Blog%20featured%20images/GivePanel-Article-Cover-Images-12%20%281%29.png);">
+                </div>
+              </a>
+              <div class="post-title">
+                <h3><a href="https://givepanel.com/blog/is-your-nonprofit-the-right-fit-for-a-facebook-challenge-quiz">Quiz: Is your nonprofit the right fit for a Facebook Challenge? </a></h3>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="content-wrapper">
+      <div class="copyright-items">
+        
+        <div class="copyright-item">
+          <span>Copyright © GivePanel Ltd. All rights reserved</span>
+          
+        </div>
+        
+        <div class="copyright-item">
+          <span>Company Telephone Number: </span>
+          
+          
+          
+          <a href="tel:0203%20693%204470">
+            0203 693 4470
+          </a>
+          
+        </div>
+        
+        <div class="copyright-item">
+          <span>Company Registration Number: 04648232</span>
+          
+        </div>
+        
+        <div class="copyright-item">
+          <span>Registered Address: 85, Great Portland Street, London, W1W 7LT</span>
+          
+        </div>
+        
+        <div class="copyright-item">
+          <span>Registered in England and Wales</span>
+          
+        </div>
+        
+        <div class="copyright-item">
+          <span></span>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer></div></div>
+      
+    </div>
+    
+    
+
+    
+    <script src="/hs/hsstatic/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
+<script>hsjQuery = window['jQuery'];</script>
+<!-- HubSpot performance collection script -->
+<script defer src="/hs/hsstatic/content-cwv-embed/static-1.1293/embed.js"></script>
+<script src="https://givepanel.com/hs-fs/hubfs/hub_generated/template_assets/1/114792977992/1741482673066/template_wow.min.js"></script>
+<script src="https://givepanel.com/hs-fs/hubfs/hub_generated/template_assets/1/114025354622/1741482662136/template_main.min.js"></script>
+<script>
+var hsVars = hsVars || {}; hsVars['language'] = 'en';
+</script>
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js"></script>
+<script src="https://givepanel.com/hs-fs/hubfs/hub_generated/module_assets/1/114030893596/1741436934936/module_Header.min.js"></script>
+<script src="https://givepanel.com/hs-fs/hubfs/hub_generated/module_assets/1/114032733493/1741436935905/module_Footer.min.js"></script>
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "standard-page"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/givepanel.com\/404"]);
+_hsq.push(["setPageId", ""]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": null,
+    "legacyPageId": null,
+    "contentFolderId": null,
+    "contentGroupId": null,
+    "abTestId": null,
+    "languageVariantId": null,
+    "languageCode": "en",
+    
+    
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/8395451.js"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    render_id: "d7ee464c-fb9a-4e3e-b7a1-1865b2d78ec8",
+    ticks: 1751241890064,
+    page_id: 0,
+    
+    content_group_id: 0,
+    portal_id: 8395451,
+    app_hs_base_url: "https://app.hubspot.com",
+    cp_hs_base_url: "https://cp.hubspot.com",
+    language: "en",
+    analytics_page_type: "standard-page",
+    scp_content_type: "",
+    
+    analytics_page_id: "null",
+    category_id: 1,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script>
+
+
+<script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.432/js/index.js"></script>
+
+
+
+
+  
+</body></html>
