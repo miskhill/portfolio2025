@@ -102,18 +102,14 @@ export function EducationSection() {
               variants={itemVariants}
               className="relative mb-6 sm:mb-8 last:mb-0"
             >
-              {/* Timeline line */}
               {index < education.length - 1 && (
                 <div className="absolute left-4 sm:left-6 top-12 sm:top-16 w-0.5 h-16 sm:h-20 bg-border" />
               )}
 
               <div className="flex items-start gap-3 sm:gap-6">
-                {/* Icon */}
                 <div className="flex-shrink-0 w-8 h-8 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
                   <edu.icon className="w-3 h-3 sm:w-5 sm:h-5 text-primary" />
                 </div>
-
-                {/* Content */}
                 <div className="flex-1 bg-card rounded-lg p-3 sm:p-6 border border-border shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start sm:items-center justify-between mb-2 sm:mb-3 flex-wrap gap-1 sm:gap-2">
                     <h3 className="text-base sm:text-xl font-semibold text-foreground">
@@ -144,7 +140,6 @@ export function EducationSection() {
           ))}
         </motion.div>
 
-        {/* Continuous Learning Note */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

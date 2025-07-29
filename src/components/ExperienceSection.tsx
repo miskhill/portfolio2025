@@ -226,12 +226,9 @@ export function ExperienceSection() {
                     variants={itemVariants}
                     className="timeline-entry"
                   >
-                    {/* Timeline Icon Circle */}
                     <div className="timeline-icon">
                       <experience.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
-
-                    {/* Content Card */}
                     <div className="timeline-content">
                       <div className="bg-card rounded-lg p-3 sm:p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
                         <div className="flex items-center justify-between mb-2 sm:mb-3">
@@ -294,12 +291,10 @@ export function ExperienceSection() {
                     variants={itemVariants}
                     className="timeline-entry"
                   >
-                    {/* Timeline Icon Circle */}
                     <div className="timeline-icon">
                       <edu.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
 
-                    {/* Content Card */}
                     <div className="timeline-content">
                       <div className="flex-1 bg-card rounded-lg p-3 sm:p-6 border border-border shadow-lg hover:shadow-xl transition-all duration-300">
                         <div className="flex items-start sm:items-center justify-between mb-2 sm:mb-3 flex-wrap gap-1 sm:gap-2">
@@ -331,7 +326,6 @@ export function ExperienceSection() {
                 ))}
               </div>
               
-              {/* Continuous Learning Note */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

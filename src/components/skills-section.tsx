@@ -21,11 +21,15 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: "Cloud & DevOps",
-    skills: ["Docker", "AWS", "GCP", "Git", "GitHub Actions"]
+    skills: ["Docker", "AWS", "GCP", "Git", "GitHub"]
   },
   {
-    title: "Tools & Others",
-    skills: ["GitKraken", "Business Management"]
+    title: "Tools",
+    skills: ["GitKraken", "Windsurf", "Claude", "Code Review", "Figma"]
+  },
+  {
+    title: "Management Skills",
+    skills: ["Business Management", "Human Resources", "Scrum", "Training Lead", "Hiring Lead"]
   }
 ];
 
@@ -116,32 +120,7 @@ export function SkillsSection() {
           ))}
         </motion.div>
 
-        {/* Additional Skills Cloud */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-10 sm:mt-16 text-center"
-        >
-          <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-6 sm:mb-8">
-            Additional Expertise
-          </h3>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-            {["Agile", "Scrum", "Team Leadership", "Problem Solving", "API Design", "Testing", "CI/CD", "Code Review"].map((skill, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/10 text-primary rounded-full text-xs sm:text-sm font-medium hover:bg-primary/20 transition-colors cursor-default"
-              >
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

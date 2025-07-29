@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ToggleTheme } from './ToggleTheme';
-import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navigationItems = [
   { name: 'Home', href: '#home' },
@@ -12,7 +11,6 @@ const navigationItems = [
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,8 +42,7 @@ export function Navigation() {
         behavior: 'smooth',
         block: 'start',
       });
-      // Close mobile menu after clicking a navigation item
-      setMobileMenuOpen(false);
+      // Navigation item clicked
     }
   };
 
@@ -65,14 +62,13 @@ export function Navigation() {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div>
+            <div className="ml-2 xs:ml-4 sm:ml-6 md:ml-10 flex items-baseline space-x-4 xs:space-x-5 sm:space-x-6 md:space-x-8">
               {navigationItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href.slice(1))}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  className={`px-2 py-1.5 sm:px-4 sm:py-2.5 rounded-lg text-xs sm:text-base font-medium transition-all duration-300 ${
                     activeSection === item.href.slice(1)
                       ? 'text-primary-foreground bg-primary shadow-md'
                       : 'text-muted-foreground hover:text-primary border border-transparent hover:border-primary/30 hover:shadow-sm'
@@ -84,40 +80,11 @@ export function Navigation() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center">
             <ToggleTheme />
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden flex items-center justify-center p-1.5 sm:p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-accent focus:outline-none"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle mobile menu"
-            >
-              {mobileMenuOpen ? <FaTimes size={16} className="sm:size-5" /> : <FaBars size={16} className="sm:size-5" />}
-            </button>
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed top-12 sm:top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-border shadow-lg max-h-[calc(100vh-3rem)] sm:max-h-[calc(100vh-4rem)] overflow-y-auto z-50">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navigationItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href.slice(1))}
-                className={`block px-4 py-2 rounded-lg text-base font-medium w-full text-left transition-all duration-300 ${
-                  activeSection === item.href.slice(1)
-                    ? 'text-primary-foreground bg-primary shadow-md'
-                    : 'text-muted-foreground hover:text-primary border border-transparent hover:border-primary/30 hover:shadow-sm'
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

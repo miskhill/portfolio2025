@@ -9,20 +9,18 @@ export function ToggleTheme() {
   return (
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="relative inline-flex h-12 w-12 items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+      className="relative inline-flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
       aria-label="Toggle theme"
     >
-      <div className="relative w-[2.2rem] h-[2.2rem] flex items-center justify-center">
-        {/* Sun icon - show in dark theme */}
+      <div className="relative w-[1.6rem] h-[1.6rem] sm:w-[2.2rem] sm:h-[2.2rem] flex items-center justify-center">
         <IoSunnyOutline
-          color="#eab308" // Bright yellow color
-          className={`absolute h-[2.2rem] w-[2.2rem] transition-all duration-300
+          color="#eab308"
+          className={`absolute h-[1.6rem] w-[1.6rem] sm:h-[2.2rem] sm:w-[2.2rem] transition-all duration-300
             ${isDark ? 'rotate-0 scale-100' : 'rotate-90 scale-0'}`}
         />
-        {/* Moon icon - show in light theme */}
         <FiMoon
-          color="#1e3a8a" // Dark blue color
-          className={`absolute h-[2.2rem] w-[2.2rem] transition-all duration-300
+          color="#1e3a8a"
+          className={`absolute h-[1.6rem] w-[1.6rem] sm:h-[2.2rem] sm:w-[2.2rem] transition-all duration-300
             ${!isDark ? 'rotate-0 scale-100' : '-rotate-90 scale-0'}`}
         />
       </div>

@@ -15,9 +15,10 @@ const experiences: Experience[] = [
     period: "Jan 2025 - Present",
     current: true,
     description: [
-      "Building and maintaining apps using React, React Native, TypeScript.",
-      "Working with EdgeDB and Node.js for backend development.",
-      "Delivering features that improve field data collection and analysis."
+      "Led the development of robust front-end features using React, React Native and TypeScript, delivering intuitive interfaces for complex soil data reports across multiple pages, enhancing user experience and data clarity for customers and internal teams.",
+      "Architected scalable backend services with Node.js, GraphQl and EdgeDB to support efficient querying, report generation, and organisation-level data segmentation, significantly improving performance and maintainability.",
+      "Drove improvements to internal data handling workflows, including integration of dynamic PDF export functionality and flexible organisation-based filters, resulting in faster report generation and improved usability for clients.",
+      "Collaborated cross-functionally with science and product teams to translate complex agritech requirements into usable software, contributing to the commercialisation of a novel soil health testing platform."
     ]
   },
   {
@@ -34,9 +35,11 @@ const experiences: Experience[] = [
     company: "GivePanel",
     period: "Oct 2022 - Dec 2023",
     description: [
-      "Fixed critical bugs and reduced support issues to zero in month one.",
-      "Integrated Sentry, reducing frontend errors by 75%, backend by 80%.",
-      "Optimised MongoDB queries and GCP resource usage to cut costs."
+      "Implemented MongoDB indexing to speed up and improve large search queries. I was successfully able to return values that had previously been unsearchable to our customers. Large queries that had previously been hanging now returned data promptly to the user.",
+      "Implemented chunking in our Node.js backend to help with the vast quantities of emails we were handling on a daily basis. We sent 945000 in one session with no fails once this was in place.",
+      "I optimised resource usage to avoid unnecessary charges after checking the GCP dashboards and set timers for our GCP staging environments to spin down at 5pm and at weekends saving the company money and being environmentally sound.",
+      "Championed implementing Observability and integrated Sentry to pro-actively spot issues in the code base. This resulted in a 75% reduction on front end errors and 80% in back-end errors being reported from August 2023 - November 2023.",
+      "I was tasked with changing our forms to all have the correct Web Standard Accessibility Guidelines. We were able to successfully pass our accessibility audits which clients demanded of us resulting in continued business."
     ]
   },
   {
@@ -44,9 +47,12 @@ const experiences: Experience[] = [
     company: "Cloudshelf Ltd",
     period: "Dec 2021 - Oct 2022",
     description: [
-      "Developed Next.js components with Shopify Polaris.",
-      "Built CI/CD with GitHub Actions and rewrote code from Python to TypeScript.",
-      "Enhanced platform with 75+ features and multiple bug fixes."
+      "Use TypeScript with React to link our backend Postgres & GraphQL database.",
+      "Hands on with Polaris the Shopify component library utilising this within our Next.js and React applications.",
+      "Store individual retailer options in our Postgres database via our Nest.js backend to influence the layout of their digital display.",
+      "Researched & assisted with the application process of being accepted to the Shopify App ecosystem.",
+      "Delivered over 75 additional features and numerous bug fixes improving the app and retailer experience.",
+      "Used Github actions to set up an automated CI/CD pipeline and wrote unit tests to achieve 80% coverage in testing. Helped onboard a QA and re-write Python code to TypeScript to assist in standardisation."
     ]
   },
   {
@@ -54,8 +60,10 @@ const experiences: Experience[] = [
     company: "Finix Restaurants Ltd",
     period: "2016 - 2021",
     description: [
-      "Managed £3.5M P&L and 100+ employees across multiple sites.",
-      "Led hiring, onboarding, and operational troubleshooting."
+      "Responsible for the overall financial and operational results of a £3.5 million business.",
+      "Managed a team of 12 managers and over 100 staff.",
+      "Operational focused in a fast paced, evolving business environment.",
+      "Responsible for hiring, training and onboarding employees."
     ]
   }
 ];
@@ -107,7 +115,6 @@ export function CareerSection() {
           viewport={{ once: true }}
           className="relative"
         >
-          {/* Timeline Line */}
           <div className="absolute left-3 sm:left-4 md:left-1/2 md:transform md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-border" />
 
           {experiences.map((experience, index) => (
@@ -118,10 +125,8 @@ export function CareerSection() {
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Timeline Dot */}
               <div className="absolute left-3 sm:left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full border-2 sm:border-4 border-background z-10 mt-1.5" />
 
-              {/* Content Card */}
               <div className={`ml-8 sm:ml-12 md:ml-0 w-[calc(100%-2rem)] sm:w-auto md:w-5/12 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
                 <div className="bg-card rounded-lg p-3 sm:p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center justify-between mb-2 sm:mb-3">
@@ -157,7 +162,6 @@ export function CareerSection() {
                 </div>
               </div>
 
-              {/* Spacer for alignment */}
               <div className="hidden md:block md:w-5/12" />
             </motion.div>
           ))}

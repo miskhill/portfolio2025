@@ -27,7 +27,6 @@ const projects: Project[] = [
     image: "https://i.imgur.com/oAyjrg2.jpg",
     technologies: ["React", "Express", "MongoDB", "Mongoose"],
     githubUrl: "https://github.com/CosmasC128/Project-3#readme",
-    liveUrl: "https://vjbhtocsid.eu10.qoddiapp.com/",
     featured: true,
   },
   {
@@ -111,7 +110,6 @@ export function ProjectSection() {
                 project.featured ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >
-              {/* Project Image or Placeholder */}
               {project.image ? (
                 <div className="h-36 sm:h-48 overflow-hidden">
                   <img 
@@ -128,7 +126,6 @@ export function ProjectSection() {
                 </div>
               )}
 
-              {/* Project Content */}
               <div className="p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-2 sm:mb-3">
                   <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors truncate pr-2">
@@ -145,7 +142,6 @@ export function ProjectSection() {
                   {project.description}
                 </p>
 
-                {/* Technologies */}
                 <div className="flex flex-wrap gap-3 sm:gap-4 mb-3 sm:mb-4 overflow-x-auto xs:overflow-x-auto scrollbar-hide">
                   {project.technologies.map((tech, techIndex) => (
                     <div
@@ -158,14 +154,17 @@ export function ProjectSection() {
                   ))}
                 </div>
 
-                {/* Project Links */}
                 <div className="flex items-center justify-start gap-4 sm:gap-6 mt-4 sm:mt-5 pt-2 sm:pt-3 border-t border-border">
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm border border-border rounded-md hover:bg-accent transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
+                      }}
+                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm border border-border rounded-md hover:bg-accent transition-colors z-10 relative"
                       aria-label="View on GitHub"
                     >
                       <FaGithub className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -177,7 +176,11 @@ export function ProjectSection() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
+                      }}
+                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors z-10 relative"
                       aria-label="View live demo"
                     >
                       <FaExternalLinkAlt className="w-2 h-2 sm:w-3 sm:h-3" />
@@ -187,7 +190,6 @@ export function ProjectSection() {
                 </div>
               </div>
 
-              {/* Hover Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
           ))}
