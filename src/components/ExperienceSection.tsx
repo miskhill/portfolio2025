@@ -26,7 +26,10 @@ const experiences: Experience[] = [
     description: [
       "Building and maintaining apps using React, React Native, TypeScript.",
       "Working with EdgeDB and Node.js for backend development.",
-      "Delivering features that improve field data collection and analysis."
+      "Delivering features that improve field data collection and analysis.",
+      "Leveraged AI to quickly and safely migrate from a GEL database to Postgres",
+      "Leveraged AI to transition from Node TypeScript to Dot net & C#",
+      "Improved automated test coverage and CI quality gates using xUnit and Vitest across backend and frontend systems."
     ]
   },
   {
