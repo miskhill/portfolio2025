@@ -17,33 +17,37 @@ export function Navigation() {
       .map((item) => document.getElementById(item.href.slice(1)))
       .filter((section): section is HTMLElement => section instanceof HTMLElement);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const activeEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (activeEntry?.target.id) {
-          setActiveSection(activeEntry.target.id);
-        }
-      },
-      {
-        rootMargin: '-30% 0px -45% 0px',
-        threshold: [0.2, 0.4, 0.6],
-      }
-    );
-
-    const handleScroll = () => {
+    const updateNavigationState = () => {
       setIsScrolled(window.scrollY > 24);
+
+      const viewportAnchor = window.scrollY + window.innerHeight * 0.32;
+      const pageBottom = window.scrollY + window.innerHeight;
+
+      if (pageBottom >= document.documentElement.scrollHeight - 24) {
+        setActiveSection(sections.at(-1)?.id ?? 'home');
+        return;
+      }
+
+      const active = sections.find((section, index) => {
+        const nextSection = sections[index + 1];
+        const start = section.offsetTop - 120;
+        const end = nextSection ? nextSection.offsetTop - 120 : Number.POSITIVE_INFINITY;
+
+        return viewportAnchor >= start && viewportAnchor < end;
+      });
+
+      if (active) {
+        setActiveSection(active.id);
+      }
     };
 
-    sections.forEach((section) => observer.observe(section));
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    updateNavigationState();
+    window.addEventListener('scroll', updateNavigationState, { passive: true });
+    window.addEventListener('resize', updateNavigationState);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', updateNavigationState);
+      window.removeEventListener('resize', updateNavigationState);
     };
   }, []);
 
@@ -54,9 +58,11 @@ export function Navigation() {
       return;
     }
 
-    element.scrollIntoView({
+    const navigationOffset = 104;
+
+    window.scrollTo({
+      top: Math.max(element.offsetTop - navigationOffset, 0),
       behavior: 'smooth',
-      block: 'start',
     });
   };
 
