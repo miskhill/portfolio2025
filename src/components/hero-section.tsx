@@ -28,7 +28,7 @@ const credibilitySignals = [
 const focusAreas = [
   {
     label: 'Current focus',
-    copy: 'Product delivery, frontend systems, and safer change across TypeScript and C# stacks.',
+    copy: 'Product delivery, frontend systems, AI-assisted development utilising Codex/Claude, TypeScript and C# stacks.',
   },
   {
     label: 'Strength',
