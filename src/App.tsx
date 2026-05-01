@@ -9,9 +9,9 @@ import { Footer } from './components/footer';
 function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="portfolio-ui-theme">
-      <div className="min-h-screen bg-background w-full max-w-screen overflow-x-hidden">
+      <div className="site-shell">
         <Header />
-        <main className="w-full max-w-full overflow-x-hidden">
+        <main className="page-shell">
           <HeroSection />
           <ExperienceSection />
           <ProjectSection />

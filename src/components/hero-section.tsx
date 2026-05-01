@@ -1,109 +1,163 @@
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa';
+
+const contactLinks = [
+  {
+    icon: FaLinkedin,
+    href: 'https://www.linkedin.com/in/gary-smith-dev/',
+    label: 'LinkedIn',
+  },
+  {
+    icon: FaGithub,
+    href: 'https://github.com/miskhill',
+    label: 'GitHub',
+  },
+  {
+    icon: FaEnvelope,
+    href: 'mailto:gary.smith80@hotmail.com',
+    label: 'Email',
+  },
+];
+
+const credibilitySignals = [
+  { value: '4+', label: 'years shipping software' },
+  { value: 'Web + Mobile', label: 'React and React Native delivery' },
+  { value: 'Ops to Eng', label: 'product mindset with leadership range' },
+];
+
+const focusAreas = [
+  {
+    label: 'Current focus',
+    copy: 'Product delivery, frontend systems, and safer change across TypeScript and C# stacks.',
+  },
+  {
+    label: 'Strength',
+    copy: 'Turning messy product constraints into software that feels clear, reliable, and maintainable.',
+  },
+  {
+    label: 'Working style',
+    copy: 'Hands-on, pragmatic, and comfortable moving from UX detail to backend shape to release confidence.',
+  },
+];
+
+const easing = [0.16, 1, 0.3, 1] as const;
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 26 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: easing,
+    },
+  },
+};
 
 export function HeroSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const contactLinks = [
-    {
-      icon: FaLinkedin,
-      href: "https://www.linkedin.com/in/gary-smith-dev/",
-      label: "LinkedIn",
-      color: "hover:text-blue-600",
-    },
-    {
-      icon: FaGithub,
-      href: "https://github.com/miskhill",
-      label: "GitHub",
-      color: "hover:text-gray-600",
-    },
-    {
-      icon: FaEnvelope,
-      href: "mailto:gary.smith80@hotmail.com",
-      label: "Email",
-      color: "hover:text-red-600",
-    },
-  ];
-
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Grid Background */}
-      <div className="absolute inset-0 grid-pattern" />
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center"
-        >
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6">
-              Gary Smith
-            </h1>
-            <p className="text-lg xs:text-xl sm:text-2xl text-muted-foreground mb-2 sm:mb-4">
-              Software Developer
-            </p>
-            <p className="text-base sm:text-lg text-muted-foreground">
-              Nottingham, England
-            </p>
-          </motion.div>
+    <section id="home" className="hero">
+      <motion.div
+        className="hero__grid"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div className="hero__content" variants={itemVariants}>
+          <span className="pill hero__eyebrow">Software Engineer • Nottingham, England</span>
 
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
-            <div className="max-w-3xl mx-auto px-2 sm:px-0">
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-3 sm:mb-4">
-                <span className="font-semibold text-primary">"Be fascinated not frustrated."</span>
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                What an amazing mindset to have!! Whether learning a new Martial Art, trying a new game for the first time or picking up a new Tech stack I am always eager to learn as much as I can to demystify any issues I might face along my journey.
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:mt-4">
-                This desire to learn is what excited me about my journey into coding from my first evening on HTML (Thanks Codecademy!) all the way through to joining General Assembly and embarking on their Software Engineering Immersive Bootcamp.
-              </p>
-            </div>
-          </motion.div>
+          <h1 className="hero__title">
+            Shipping sharper
+            <span className="hero__title-accent"> product experiences</span>
+          </h1>
 
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
-            <div className="flex justify-center space-x-4 sm:space-x-6">
-              {contactLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-full bg-card border border-border transition-all duration-300 hover:scale-110 hover:shadow-lg ${link.color}`}
-                  aria-label={link.label}
-                >
-                  <link.icon className="w-6 h-6 sm:w-[30px] sm:h-[30px]" />
-                </a>
-              ))}
-            </div>
-          </motion.div>
+          <div className="hero__subtitle">
+            <span>React</span>
+            <span className="hero__separator" />
+            <span>React Native</span>
+            <span className="hero__separator" />
+            <span>TypeScript</span>
+            <span className="hero__separator" />
+            <span>C#</span>
+          </div>
 
+          <p className="hero__lead">
+            I build customer-facing products with a strong bias for clarity, delivery, and
+            maintainable code. My background in leadership and operations means I care as much
+            about the shape of the product as the code that powers it.
+          </p>
 
+          <div className="button-row">
+            <a href="#projects" className="button button--primary">
+              View selected work
+              <FaArrowRight />
+            </a>
+            <a href="mailto:gary.smith80@hotmail.com" className="button button--secondary">
+              Get in touch
+            </a>
+          </div>
+
+          <div className="hero__socials" aria-label="Social links">
+            {contactLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="icon-button"
+                aria-label={link.label}
+                title={link.label}
+              >
+                <link.icon size={18} />
+              </a>
+            ))}
+          </div>
+
+          <div className="hero__stats">
+            {credibilitySignals.map((signal) => (
+              <div key={signal.label} className="hero__stat">
+                <span className="hero__stat-value">{signal.value}</span>
+                <span className="hero__stat-label">{signal.label}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
-      </div>
+
+        <motion.aside className="hero__panel" variants={itemVariants}>
+          <div className="hero__panel-card">
+            <p className="section-label">Positioning</p>
+            <h2 className="hero__panel-title">Product-minded engineering, not just page-building.</h2>
+            <p className="hero__panel-copy">
+              The strongest part of my portfolio is the range behind it: customer-facing UI,
+              backend changes, AI-assisted migrations, quality gates, and delivery under real
+              product pressure.
+            </p>
+          </div>
+
+          <div className="hero__panel-card">
+            <p className="section-label">What I bring</p>
+            <ul className="hero__focus-list">
+              {focusAreas.map((area) => (
+                <li key={area.label} className="hero__focus-item">
+                  <span className="hero__focus-label">{area.label}</span>
+                  <span className="hero__focus-copy">{area.copy}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.aside>
+      </motion.div>
     </section>
   );
 }

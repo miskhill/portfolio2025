@@ -1,354 +1,272 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import './timeline.css';
-import { TbRefresh } from 'react-icons/tb';
-import { FaGraduationCap, FaCode, FaBook, FaBriefcase, FaHandHoldingHeart, FaCloud, FaLaptopCode } from 'react-icons/fa';
-
-// Career data
-interface Experience {
-  title: string;
-  company: string;
-  period: string;
-  description: string[];
-  current?: boolean;
-  icon: React.ComponentType<{ className?: string }>;
-  website: string;
-}
-
-const experiences: Experience[] = [
-  {
-    title: "Software Engineer",
-    company: "PES Technologies",
-    period: "Jan 2025 - Present",
-    current: true,
-    icon: FaLaptopCode,
-    website: "https://www.pestechnologies.com/",
-    description: [
-      "Building and maintaining apps using React, React Native, TypeScript.",
-      "Working with EdgeDB and Node.js for backend development.",
-      "Delivering features that improve field data collection and analysis.",
-      "Leveraged AI to quickly and safely migrate from a GEL database to Postgres",
-      "Leveraged AI to transition from Node TypeScript to Dot net & C#",
-      "Improved automated test coverage and CI quality gates using xUnit and Vitest across backend and frontend systems."
-    ]
-  },
-  {
-    title: "Software Engineer",
-    company: "Night Zookeeper",
-    period: "Jan 2024 - Dec 2024",
-    icon: FaCode,
-    website: "https://www.nightzookeeper.com/",
-    description: [
-      "Delivered 3 Phaser3 games for their educational app.",
-      "Improved home page conversion with new UI components."
-    ]
-  },
-  {
-    title: "Software Engineer",
-    company: "GivePanel",
-    period: "Oct 2022 - Dec 2023",
-    icon: FaHandHoldingHeart,
-    website: "https://givepanel.com/",
-    description: [
-      "Fixed critical bugs and reduced support issues to zero in month one.",
-      "Integrated Sentry, reducing frontend errors by 75%, backend by 80%.",
-      "Optimised MongoDB queries and GCP resource usage to cut costs."
-    ]
-  },
-  {
-    title: "Junior Engineer",
-    company: "Cloudshelf Ltd",
-    period: "Dec 2021 - Oct 2022",
-    icon: FaCloud,
-    website: "https://cloudshelf.ai/",
-    description: [
-      "Developed Next.js components with Shopify Polaris.",
-      "Built CI/CD with GitHub Actions and rewrote code from Python to TypeScript.",
-      "Enhanced platform with 75+ features and multiple bug fixes."
-    ]
-  },
-  {
-    title: "Business Manager",
-    company: "Finix Restaurants Ltd",
-    period: "2016 - 2021",
-    icon: FaBriefcase,
-    website: "https://www.mcdonalds.com/gb/en-gb.html",
-    description: [
-      "Managed £3.5M P&L and 100+ employees across multiple sites.",
-      "Led hiring, onboarding, and operational troubleshooting."
-    ]
-  }
-];
-
-// Education data
-interface Education {
-  institution: string;
-  degree: string;
-  period: string;
-  description?: string;
-  icon: React.ComponentType<{ className?: string }>;
-  type: 'formal' | 'bootcamp' | 'online';
-}
-
-const education: Education[] = [
-  {
-    institution: "General Assembly",
-    degree: "Software Engineering Immersive",
-    period: "Aug 2021 - Oct 2021",
-    description: "Intensive full-stack web development bootcamp covering modern JavaScript, React, Node.js, databases, and software engineering best practices.",
-    icon: FaCode,
-    type: 'bootcamp'
-  },
-  {
-    institution: "University of Huddersfield",
-    degree: "BA(Hons) - History",
-    period: "Graduated",
-    description: "Developed critical thinking, research, and analytical skills. Strong foundation in written communication and historical analysis.",
-    icon: FaGraduationCap,
-    type: 'formal'
-  },
-  {
-    institution: "Udemy",
-    degree: "Complete Responsive Web Development",
-    period: "July 2021",
-    description: "Comprehensive course covering HTML5, CSS3, JavaScript, and responsive web design principles.",
-    icon: FaBook,
-    type: 'online'
-  }
-];
-
-const typeColors = {
-  formal: 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-  bootcamp: 'bg-green-500/10 text-green-600 border-green-500/20',
-  online: 'bg-purple-500/10 text-purple-600 border-purple-500/20'
-};
-
-const typeLabels = {
-  formal: 'University',
-  bootcamp: 'Bootcamp',
-  online: 'Online Course'
-};
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Tab = 'career' | 'education';
 
+interface JourneyEntry {
+  title: string;
+  company: string;
+  period: string;
+  summary: string;
+  points: string[];
+  current?: boolean;
+  website?: string;
+  logo?: string;
+  tags: string[];
+}
+
+const careerEntries: JourneyEntry[] = [
+  {
+    title: 'Software Engineer',
+    company: 'PES Technologies',
+    period: 'Jan 2025 - Present',
+    summary:
+      'Working across web, mobile, and backend surfaces to make complex soil-testing products clearer and more dependable.',
+    current: true,
+    website: 'https://www.pestechnologies.com/',
+    logo: '/images/logos/pes-logo.png',
+    tags: ['React', 'React Native', 'TypeScript', 'C#'],
+    points: [
+      'Building and maintaining product features across React, React Native, and TypeScript user journeys.',
+      'Helping move core systems toward Postgres and .NET while keeping delivery pace steady.',
+      'Improving test coverage, reliability, and release confidence across frontend and backend code.',
+    ],
+  },
+  {
+    title: 'Software Engineer',
+    company: 'Night Zookeeper',
+    period: 'Jan 2024 - Dec 2024',
+    summary:
+      'Delivered educational product work with an emphasis on engagement, game experience, and conversion.',
+    website: 'https://www.nightzookeeper.com/',
+    logo: '/images/logos/nightzookeeper-logo.png',
+    tags: ['Phaser', 'Frontend UI', 'Product Growth'],
+    points: [
+      'Delivered three Phaser 3 games for the educational platform.',
+      'Improved the homepage experience with new UI components aimed at stronger conversion.',
+    ],
+  },
+  {
+    title: 'Software Engineer',
+    company: 'GivePanel',
+    period: 'Oct 2022 - Dec 2023',
+    summary:
+      'Shipped reliability, search, observability, and cost improvements on a live SaaS product handling large-scale fundraising workflows.',
+    website: 'https://givepanel.com/',
+    logo: '/images/logos/givepanel-logo.png',
+    tags: ['Node.js', 'MongoDB', 'Sentry', 'GCP'],
+    points: [
+      'Improved heavy MongoDB queries so previously failing customer searches returned promptly.',
+      'Introduced backend chunking that supported very high-volume email runs more safely.',
+      'Integrated observability and helped drive a major reduction in reported frontend and backend errors.',
+    ],
+  },
+  {
+    title: 'Junior Engineer',
+    company: 'Cloudshelf Ltd',
+    period: 'Dec 2021 - Oct 2022',
+    summary:
+      'Built customer-facing commerce features and improved delivery discipline early in my engineering career.',
+    website: 'https://cloudshelf.ai/',
+    logo: '/images/logos/cloudshelf-logo.png',
+    tags: ['Next.js', 'Shopify Polaris', 'CI/CD', 'GraphQL'],
+    points: [
+      'Built UI and data flows with React, Next.js, and Shopify Polaris.',
+      'Delivered more than 75 product improvements and bug fixes across the application.',
+      'Helped set up CI/CD and supported a wider TypeScript standardisation effort.',
+    ],
+  },
+  {
+    title: 'Business Manager',
+    company: 'Finix Restaurants Ltd',
+    period: '2016 - 2021',
+    summary:
+      'Managed a high-volume business environment before moving into software engineering, which still shapes how I lead and prioritise.',
+    website: 'https://www.mcdonalds.com/gb/en-gb.html',
+    logo: '/images/logos/mcdonalds-logo.png',
+    tags: ['Leadership', 'Operations', 'Hiring', 'P&L'],
+    points: [
+      'Owned the financial and operational performance of a multi-million-pound business.',
+      'Managed managers, staffing, and day-to-day delivery in a fast-moving environment.',
+      'Built the communication and leadership skills I now bring into engineering teams.',
+    ],
+  },
+];
+
+const educationEntries: JourneyEntry[] = [
+  {
+    title: 'Software Engineering Immersive',
+    company: 'General Assembly',
+    period: 'Aug 2021 - Oct 2021',
+    summary:
+      'An intensive full-stack programme that formalised my shift into software engineering.',
+    tags: ['React', 'Node.js', 'JavaScript'],
+    points: [
+      'Covered modern JavaScript, React, Node.js, databases, and software engineering fundamentals.',
+      'Developed the first set of portfolio projects that started my move into product engineering.',
+    ],
+  },
+  {
+    title: 'BA (Hons) History',
+    company: 'University of Huddersfield',
+    period: 'Graduated',
+    summary:
+      'The research and communication side of this degree still influences how I write, reason, and explain.',
+    tags: ['Research', 'Communication', 'Analysis'],
+    points: [
+      'Developed strong written communication, critical analysis, and structured thinking.',
+    ],
+  },
+  {
+    title: 'Responsive Web Development',
+    company: 'Udemy',
+    period: 'July 2021',
+    summary:
+      'The course that helped kick-start the practical side of building on the web.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    points: [
+      'Focused on HTML5, CSS3, JavaScript, and responsive layout principles.',
+    ],
+  },
+];
+
+const easing = [0.16, 1, 0.3, 1] as const;
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: easing,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: easing,
+    },
+  },
+};
+
+function JourneyCard({ entry }: { entry: JourneyEntry }) {
+  return (
+    <motion.article
+      variants={itemVariants}
+      className={`journey-card ${entry.current ? 'journey-card--current' : ''}`}
+    >
+      <div className="journey-card__top">
+        <div className="journey-card__identity">
+          {entry.logo ? (
+            <img className="journey-card__logo" src={entry.logo} alt={`${entry.company} logo`} />
+          ) : null}
+
+          <div>
+            <div className="journey-card__eyebrow">
+              <span>{entry.period}</span>
+              {entry.current ? <span>• Current</span> : null}
+            </div>
+            <h3 className="journey-card__title">{entry.title}</h3>
+            <div className="journey-card__company">
+              {entry.website ? (
+                <a href={entry.website} target="_blank" rel="noopener noreferrer">
+                  {entry.company}
+                </a>
+              ) : (
+                entry.company
+              )}
+            </div>
+          </div>
+        </div>
+
+        {entry.current ? <span className="journey-card__badge">Current role</span> : null}
+      </div>
+
+      <div className="journey-card__body">
+        <p className="journey-card__summary">{entry.summary}</p>
+
+        <ul className="journey-card__list">
+          {entry.points.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
+
+        <div className="journey-card__tags" aria-label={`${entry.company} technologies and themes`}>
+          {entry.tags.map((tag) => (
+            <span key={tag} className="journey-tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
 export function ExperienceSection() {
   const [activeTab, setActiveTab] = useState<Tab>('career');
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
+  const entries = activeTab === 'career' ? careerEntries : educationEntries;
 
   return (
-    <section id="experience" className="pt-4 pb-12 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20 bg-muted/50 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 sm:mb-16"
-        >
-          <div className="flex justify-center items-center gap-4 mb-8">
-            <motion.div
-              onClick={() => setActiveTab('career')}
-              className={`text-3xl font-bold cursor-pointer transition
-                ${activeTab === 'career' 
-                  ? 'text-foreground' 
-                  : 'text-gray-400 opacity-70'} 
-                hover:text-foreground hover:opacity-100`}
-            >
-              Career
-            </motion.div>
-
-            <div className="mx-10 sm:mx-16">
-              <motion.div 
-                onClick={() => setActiveTab(activeTab === 'career' ? 'education' : 'career')}
-                className="cursor-pointer p-2 hover:bg-muted rounded-full transition-all duration-200"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <TbRefresh
-                  className={`transition-all duration-300
-                  ${activeTab === 'education' ? 'rotate-180' : 'rotate-0'}`}
-                  size={24}
-                />
-              </motion.div>
-            </div>
-            
-            <motion.div
-              onClick={() => setActiveTab('education')}
-              className={`text-3xl font-bold cursor-pointer transition
-                ${activeTab === 'education' 
-                  ? 'text-foreground' 
-                  : 'text-gray-400 opacity-70'} 
-                hover:text-foreground hover:opacity-100`}
-            >
-              Education
-            </motion.div>
+    <section id="experience" className="section-shell">
+      <div className="journey">
+        <div className="journey__header">
+          <div className="section-heading">
+            <p className="section-label">Experience</p>
+            <h2 className="section-title">A career path that combines product delivery with range.</h2>
+            <p className="section-copy">
+              I came into software from leadership and operations, which is why I naturally
+              balance implementation detail with usability, delivery pressure, and team reality.
+            </p>
           </div>
 
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            {activeTab === 'career' 
-              ? 'My professional experience spanning software engineering, business management, and leadership roles.'
-              : 'My educational journey from traditional academics to modern software engineering.'}
-          </p>
-        </motion.div>
+          <div className="journey-switch" role="tablist" aria-label="Experience tabs">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'career'}
+              className={`journey-switch__button ${
+                activeTab === 'career' ? 'journey-switch__button--active' : ''
+              }`}
+              onClick={() => setActiveTab('career')}
+            >
+              Career
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'education'}
+              className={`journey-switch__button ${
+                activeTab === 'education' ? 'journey-switch__button--active' : ''
+              }`}
+              onClick={() => setActiveTab('education')}
+            >
+              Education
+            </button>
+          </div>
+        </div>
 
         <AnimatePresence mode="wait">
-          {activeTab === 'career' ? (
-            <motion.div
-              key="career"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              variants={containerVariants}
-              className="relative"
-            >
-              <div className="timeline-container">
-                {experiences.map((experience, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="timeline-entry"
-                  >
-                    <div className="timeline-icon">
-                      <experience.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                    </div>
-                    <div className="timeline-content">
-                      <div className="bg-card rounded-lg p-3 sm:p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
-                        <div className="flex items-center justify-between mb-2 sm:mb-3">
-                          <div className="flex items-center gap-2 sm:gap-3">
-                            <div className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 bg-primary/10 rounded-md flex items-center justify-center">
-                              <experience.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
-                            </div>
-                            <h3 className="text-base sm:text-xl font-semibold text-foreground truncate pr-2 content-header">
-                              {experience.title}
-                            </h3>
-                          </div>
-                          {experience.current && (
-                            <span className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full whitespace-nowrap flex-shrink-0">
-                              Current
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="mb-2 sm:mb-4">
-                          <a 
-                            href={experience.website} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-sm sm:text-lg font-medium text-primary hover:underline mb-0.5 sm:mb-1 inline-block content-subheader"
-                          >
-                            {experience.company}
-                          </a>
-                          <p className="text-xs sm:text-sm text-muted-foreground content-period">
-                            {experience.period}
-                          </p>
-                        </div>
-
-                        <ul className="space-y-1 sm:space-y-2">
-                          {experience.description.map((item, i) => (
-                            <li key={i} className="text-xs sm:text-sm text-muted-foreground">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="education"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              variants={containerVariants}
-              className="relative max-w-4xl mx-auto"
-            >
-              <div className="timeline-container">
-                {education.map((edu, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="timeline-entry"
-                  >
-                    <div className="timeline-icon">
-                      <edu.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                    </div>
-
-                    <div className="timeline-content">
-                      <div className="flex-1 bg-card rounded-lg p-3 sm:p-6 border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div className="flex items-start sm:items-center justify-between mb-2 sm:mb-3 flex-wrap gap-1 sm:gap-2">
-                          <h3 className="text-base sm:text-xl font-semibold text-foreground content-header">
-                            {edu.degree}
-                          </h3>
-                          <span className={`px-2 sm:px-3 py-0.5 sm:py-1 text-xs font-medium rounded-full border ${typeColors[edu.type]} whitespace-nowrap`}>
-                            {typeLabels[edu.type]}
-                          </span>
-                        </div>
-
-                        <div className="mb-2 sm:mb-4">
-                          <h4 className="text-sm sm:text-lg font-medium text-primary mb-0.5 sm:mb-1 content-subheader">
-                            {edu.institution}
-                          </h4>
-                          <p className="text-xs sm:text-sm text-muted-foreground content-period">
-                            {edu.period}
-                          </p>
-                        </div>
-
-                        {edu.description && (
-                          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                            {edu.description}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="mt-10 sm:mt-16"
-              >
-                <div className="bg-card rounded-lg p-4 sm:p-8 border border-border shadow-lg">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 sm:mb-4">
-                    Continuous Learning
-                  </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
-                    I believe in lifelong learning and continuously updating my skills with the latest technologies, 
-                    best practices, and industry trends. My journey from business management to software engineering 
-                    exemplifies my commitment to growth and adaptation.
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
+          <motion.div
+            key={activeTab}
+            className="journey-stack"
+            variants={sectionVariants}
+            initial="hidden"
+            animate="visible"
+            exit={{ opacity: 0, y: -14, transition: { duration: 0.2 } }}
+          >
+            {entries.map((entry) => (
+              <JourneyCard key={`${activeTab}-${entry.company}-${entry.title}`} entry={entry} />
+            ))}
+          </motion.div>
         </AnimatePresence>
       </div>
     </section>

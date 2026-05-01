@@ -3,125 +3,86 @@ import { TechIcon } from '../assets/SvgComponents';
 
 interface SkillCategory {
   title: string;
+  summary: string;
   skills: string[];
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend",
-    skills: ["JavaScript", "TypeScript", "React", "React Native", "Next.js", "HTML5", "CSS3"]
+    title: 'Frontend systems',
+    summary:
+      'Building interfaces that feel clear, responsive, and maintainable across web and mobile surfaces.',
+    skills: ['TypeScript', 'React', 'React Native', 'Next.js', 'HTML5', 'CSS3'],
   },
   {
-    title: "Backend", 
-    skills: ["Node.js", "Python", "Express", "Nest.js", "GraphQL", "Django"]
+    title: 'Backend and data',
+    summary:
+      'Comfortable shaping APIs, working with persistence layers, and supporting product behaviour end to end.',
+    skills: ['Node.js', 'Express', 'GraphQL', 'Python', 'Django', 'PostgreSQL', 'MongoDB'],
   },
   {
-    title: "Databases",
-    skills: ["MongoDB", "PostgreSQL", "EdgeDB", "Mongoose"]
+    title: 'Delivery and tooling',
+    summary:
+      'Focused on shipping with confidence through sensible tooling, infrastructure awareness, and CI discipline.',
+    skills: ['Docker', 'Git', 'GitHub Actions', 'AWS', 'GCP', 'GitKraken'],
   },
   {
-    title: "Cloud & DevOps",
-    skills: ["Docker", "AWS", "GCP", "Git", "GitHub"]
+    title: 'Leadership range',
+    summary:
+      'The management side matters too: communication, hiring, training, prioritisation, and calmer delivery under pressure.',
+    skills: ['Business Management', 'Scrum', 'Training Lead', 'Hiring Lead', 'Code Review', 'Figma'],
   },
-  {
-    title: "Tools",
-    skills: ["GitKraken", "Windsurf", "Claude", "Code Review", "Figma"]
-  },
-  {
-    title: "Management Skills",
-    skills: ["Business Management", "Human Resources", "Scrum", "Training Lead", "Hiring Lead"]
-  }
 ];
 
+const easing = [0.16, 1, 0.3, 1] as const;
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: easing,
+    },
+  },
+};
+
 export function SkillsSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const categoryVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const skillVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.4,
-      },
-    },
-  };
-
   return (
-    <section id="skills" className="py-12 sm:py-16 lg:py-20 bg-muted/50 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 sm:mb-16"
-        >
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-            Technical Skills
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            Technologies and tools I work with to bring ideas to life.
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
-        >
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={categoryIndex}
-              variants={categoryVariants}
-              className="bg-card rounded-lg p-4 sm:p-6 border border-border shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4 sm:mb-6 text-center">
-                {category.title}
-              </h3>
-              
-              <div className="grid grid-cols-2 gap-2 sm:gap-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    variants={skillVariants}
-                    className="flex flex-col items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg bg-background border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105"
-                    whileHover={{ y: -2 }}
-                  >
-                    <TechIcon technology={skill} size={28} className="text-primary" />
-                    <span className="text-xs sm:text-sm font-medium text-center text-muted-foreground line-clamp-2">
-                      {skill}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-
+    <section id="skills" className="section-shell">
+      <div className="section-heading">
+        <p className="section-label">Capabilities</p>
+        <h2 className="section-title">A tighter skills section that reads like capability, not clutter.</h2>
+        <p className="section-copy">
+          The goal here is to show what I can reliably deliver, not to dump every tool I have
+          touched. These are the areas I work in most confidently.
+        </p>
       </div>
+
+      <motion.div
+        className="skills-grid"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ staggerChildren: 0.09 }}
+      >
+        {skillCategories.map((category) => (
+          <motion.article key={category.title} className="skill-card" variants={cardVariants}>
+            <h3 className="skill-card__title">{category.title}</h3>
+            <p className="skill-card__summary">{category.summary}</p>
+
+            <div className="skill-card__tags">
+              {category.skills.map((skill) => (
+                <span key={skill} className="skill-tag">
+                  <TechIcon technology={skill} size={16} />
+                  <span className="skill-tag__label">{skill}</span>
+                </span>
+              ))}
+            </div>
+          </motion.article>
+        ))}
+      </motion.div>
     </section>
   );
 }

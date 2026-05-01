@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ToggleTheme } from './ToggleTheme';
 
 const navigationItems = [
@@ -7,154 +7,95 @@ const navigationItems = [
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
 ];
-const MOBILE_BREAKPOINT = 640;
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(
-    () => (typeof window !== 'undefined' ? window.innerWidth < MOBILE_BREAKPOINT : false)
-  );
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    const sections = navigationItems
+      .map((item) => document.getElementById(item.href.slice(1)))
+      .filter((section): section is HTMLElement => section instanceof HTMLElement);
 
-      const sections = navigationItems.map(item => item.href.slice(1));
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const activeEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (activeEntry?.target.id) {
+          setActiveSection(activeEntry.target.id);
         }
-        return false;
-      });
-
-      if (currentSection) {
-        setActiveSection(currentSection);
+      },
+      {
+        rootMargin: '-30% 0px -45% 0px',
+        threshold: [0.2, 0.4, 0.6],
       }
+    );
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
     };
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    sections.forEach((section) => observer.observe(section));
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-      // Navigation item clicked
+
+    if (!element) {
+      return;
     }
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full max-w-screen ${
-        isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-b border-border'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-2 sm:px-6 lg:px-8">
-        {isMobile ? (
-          <div style={{ paddingTop: '0.75rem', paddingBottom: '0.75rem' }}>
-            <div
-              className="flex items-center justify-between"
-              style={{ gap: '0.75rem' }}
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <span className="text-lg font-bold text-primary">GS</span>
-                </div>
-              </div>
+    <nav className={`site-nav ${isScrolled ? 'site-nav--scrolled' : ''}`}>
+      <div className="site-nav__content">
+        <button
+          type="button"
+          className="site-nav__brand"
+          onClick={() => scrollToSection('home')}
+          aria-label="Go to home section"
+        >
+          <span className="site-nav__monogram">GS</span>
+          <span className="site-nav__name">Gary Smith</span>
+          <span className="site-nav__role">Software Engineer</span>
+        </button>
 
-              <div className="flex items-center">
-                <ToggleTheme />
-              </div>
-            </div>
+        <div className="site-nav__menu" aria-label="Primary navigation">
+          {navigationItems.map((item) => {
+            const sectionId = item.href.slice(1);
+            const isActive = activeSection === sectionId;
 
-            <div
-              style={{
-                marginTop: '0.75rem',
-                overflowX: 'auto',
-                paddingBottom: '0.15rem',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-              }}
-            >
-              <div
-                className="inline-flex"
-                style={{ gap: '0.5rem', minWidth: 'max-content' }}
+            return (
+              <button
+                key={item.name}
+                type="button"
+                onClick={() => scrollToSection(sectionId)}
+                className={`site-nav__link ${isActive ? 'site-nav__link--active' : ''}`}
+                aria-current={isActive ? 'page' : undefined}
               >
-                {navigationItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href.slice(1))}
-                    className={`rounded-full text-xs font-medium transition-all duration-300 ${
-                      activeSection === item.href.slice(1)
-                        ? 'text-primary-foreground bg-primary shadow-md'
-                        : 'text-muted-foreground hover:text-primary border border-transparent hover:border-primary/30 hover:shadow-sm'
-                    }`}
-                    style={{
-                      borderRadius: '9999px',
-                      padding: '0.7rem 1rem',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    {item.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="flex items-center justify-between h-12 sm:h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <span className="text-lg sm:text-2xl font-bold text-primary">GS</span>
-              </div>
-            </div>
+                {item.name}
+              </button>
+            );
+          })}
+        </div>
 
-            <div>
-              <div
-                className="flex items-baseline space-x-4 xs:space-x-5 sm:space-x-6 md:space-x-8"
-                style={{ marginLeft: '1rem' }}
-              >
-                {navigationItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href.slice(1))}
-                    className={`px-4 py-3 rounded-full text-xs sm:text-base font-medium transition-all duration-300 ${
-                      activeSection === item.href.slice(1)
-                        ? 'text-primary-foreground bg-primary shadow-md'
-                        : 'text-muted-foreground hover:text-primary border border-transparent hover:border-primary/30 hover:shadow-sm'
-                    }`}
-                    style={{ borderRadius: '9999px' }}
-                  >
-                    {item.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center">
-              <ToggleTheme />
-            </div>
-          </div>
-        )}
+        <div className="site-nav__actions">
+          <ToggleTheme />
+        </div>
       </div>
     </nav>
   );
