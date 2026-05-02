@@ -1257,7 +1257,14 @@ img {
   }
 
   .journey__header {
+    flex-direction: column;
     align-items: flex-start;
+  }
+
+  .journey__header .section-heading {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0;
   }
 
   .journey-switch {
