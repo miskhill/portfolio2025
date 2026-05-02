@@ -1073,6 +1073,12 @@ img {
   padding: 2.6rem 0 2rem;
 }
 
+.footer__inner {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 .footer-card {
   position: relative;
   overflow: hidden;
@@ -1088,9 +1094,7 @@ img {
 
 .footer-card__content {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) auto;
   gap: 1.5rem;
-  align-items: start;
 }
 
 .footer-card__title {
@@ -1114,20 +1118,51 @@ img {
 
 .footer-card__actions {
   display: grid;
-  gap: 0.9rem;
-  justify-items: end;
+  gap: 1rem;
+}
+
+.footer-card__action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1rem;
+  margin-top: 0.1rem;
+}
+
+.footer-card__cta {
+  flex: 0 0 auto;
+}
+
+.footer-card__secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
 .footer-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.65rem;
+  min-height: 3.1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(var(--background-rgb), 0.52);
   color: var(--muted-foreground);
   font-weight: 600;
+  transition:
+    transform 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
 .footer-link:hover {
+  transform: translateY(-1px);
   color: var(--foreground);
+  border-color: rgba(var(--primary-rgb), 0.26);
+  background: rgba(var(--background-rgb), 0.72);
 }
 
 .footer-bottom {
@@ -1146,17 +1181,12 @@ img {
 @media (max-width: 1100px) {
   .hero__grid,
   .projects-grid__featured,
-  .footer-card__content,
   .skills-grid {
     grid-template-columns: 1fr;
   }
 
   .hero__title {
     max-width: 11ch;
-  }
-
-  .footer-card__actions {
-    justify-items: start;
   }
 }
 
@@ -1191,6 +1221,11 @@ img {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 7.45rem;
+  }
+
+  .footer__inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .section-shell {
@@ -1288,6 +1323,19 @@ img {
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer-card__action-row,
+  .footer-card__secondary {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .footer-card__cta,
+  .footer-link {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .project-card--featured {
