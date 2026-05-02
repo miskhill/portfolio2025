@@ -88,6 +88,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ technology, className = "", 
     "react native": ({ className = "", size = 24 }) => <TbBrandReactNative className={className} size={size} />,
     reactnative: ({ className = "", size = 24 }) => <TbBrandReactNative className={className} size={size} />,
     nodejs: NodeIcon,
+    "node.js": NodeIcon,
     node: NodeIcon,
     python: PythonIcon,
     nextjs: NextJSIcon,
@@ -100,7 +101,6 @@ export const TechIcon: React.FC<TechIconProps> = ({ technology, className = "", 
     mongodb: MongoDBIcon,
     postgresql: ({ className = "", size = 24 }) => <SiPostgresql className={className} size={size} />,
     postgres: ({ className = "", size = 24 }) => <SiPostgresql className={className} size={size} />,
-    edgedb: ({ className = "", size = 24 }) => <div className={`flex items-center justify-center bg-primary/10 rounded text-xs font-medium text-primary ${className}`} style={{ width: size, height: size }}>ED</div>,
     mongoose: ({ className = "", size = 24 }) => <SiMongoose className={className} size={size} />,
     docker: DockerIcon,
     aws: ({ className = "", size = 24 }) => <SiAmazon className={className} size={size} />,
@@ -120,14 +120,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ technology, className = "", 
   const IconComponent = techIcons[technology.toLowerCase()];
   
   if (!IconComponent) {
-    return (
-      <div 
-        className={`flex items-center justify-center bg-muted rounded text-xs font-medium ${className}`}
-        style={{ width: size, height: size }}
-      >
-        {technology.slice(0, 2).toUpperCase()}
-      </div>
-    );
+    return null;
   }
 
   return <IconComponent className={className} size={size} />;
