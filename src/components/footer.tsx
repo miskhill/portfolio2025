@@ -79,10 +79,10 @@ export function Footer() {
           </div>
 
           <div className="footer-bottom">
-            <span>Built with React, Vite, Framer Motion, and a sharper visual system.</span>
+            <span>Built with React, Vite & Framer Motion.</span>
             <span>© 2026 Gary Smith</span>
           </div>
-        </motion.div>
+        </motion.div> 
       </div>
     </footer>
   );
