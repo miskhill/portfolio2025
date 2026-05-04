@@ -140,7 +140,7 @@ export function HeroSection() {
             <h2 className="hero__panel-title">Product-minded engineering, not just page-building.</h2>
             <p className="hero__panel-copy">
               The strongest part of my portfolio is the range behind it: customer-facing UI,
-              backend changes, AI-assisted migrations, quality gates, and delivery under real
+              backend changes, AI-assisted migrations, Observability implementation, and delivery under real
               product pressure.
             </p>
           </div>
