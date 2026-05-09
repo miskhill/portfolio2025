@@ -1,5 +1,20 @@
 import React from 'react';
-import { SiPostgresql, SiExpress, SiNestjs, SiGraphql, SiDjango, SiMongoose, SiAmazon, SiGooglecloud, SiGithubactions, SiGitkraken } from 'react-icons/si';
+import {
+  SiAmazon,
+  SiAngular,
+  SiChartdotjs,
+  SiDjango,
+  SiDotnet,
+  SiExpress,
+  SiGithubactions,
+  SiGitkraken,
+  SiGooglecloud,
+  SiGraphql,
+  SiMaterialdesign,
+  SiMongoose,
+  SiNestjs,
+  SiPostgresql,
+} from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { MdBusiness } from 'react-icons/md';
 
@@ -84,12 +99,17 @@ export const TechIcon: React.FC<TechIconProps> = ({ technology, className = "", 
   const techIcons: Record<string, React.FC<SvgIconProps>> = {
     javascript: JavaScriptIcon,
     typescript: TypeScriptIcon,
+    angular: ({ className = "", size = 24 }) => <SiAngular className={className} size={size} />,
     react: ReactIcon,
     "react native": ({ className = "", size = 24 }) => <TbBrandReactNative className={className} size={size} />,
     reactnative: ({ className = "", size = 24 }) => <TbBrandReactNative className={className} size={size} />,
+    "chart.js": ({ className = "", size = 24 }) => <SiChartdotjs className={className} size={size} />,
+    "c#": ({ className = "", size = 24 }) => <SiDotnet className={className} size={size} />,
     nodejs: NodeIcon,
     "node.js": NodeIcon,
     node: NodeIcon,
+    ".net": ({ className = "", size = 24 }) => <SiDotnet className={className} size={size} />,
+    "asp.net core": ({ className = "", size = 24 }) => <SiDotnet className={className} size={size} />,
     python: PythonIcon,
     nextjs: NextJSIcon,
     "next.js": NextJSIcon,
@@ -110,6 +130,9 @@ export const TechIcon: React.FC<TechIconProps> = ({ technology, className = "", 
     "github actions": ({ className = "", size = 24 }) => <SiGithubactions className={className} size={size} />,
     gitkraken: ({ className = "", size = 24 }) => <SiGitkraken className={className} size={size} />,
     "business management": ({ className = "", size = 24 }) => <MdBusiness className={className} size={size} />,
+    "angular material": ({ className = "", size = 24 }) => (
+      <SiMaterialdesign className={className} size={size} />
+    ),
     git: GitIcon,
     html5: HTMLIcon,
     html: HTMLIcon,

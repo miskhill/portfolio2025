@@ -35,6 +35,17 @@ const projects: Project[] = [
     featured: true,
   },
   {
+    title: 'Angular AgriDash',
+    summary:
+      'An agriculture analytics dashboard pairing an Angular frontend with a typed ASP.NET Core API, Angular Material, and Chart.js.',
+    role: 'Featured project • Angular dashboard, C# API, data visualisation',
+    image: '/images/projects/angular-agridash.png',
+    technologies: ['Angular', 'C#', 'ASP.NET Core', 'Chart.js', 'Angular Material'],
+    githubUrl: 'https://github.com/miskhill/csharp-backend-project#readme',
+    liveUrl: 'https://angularagridash.netlify.app/',
+    featured: true,
+  },
+  {
     title: 'Connect 4',
     summary: 'A polished browser version of the classic desktop game built as a focused solo project.',
     role: 'Solo project • Core gameplay and UI',
