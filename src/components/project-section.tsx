@@ -15,23 +15,34 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Hospitality Hub',
+    title: 'Question Manager',
     summary:
-      'A team-built hiring platform for hospitality businesses with account flows, job matching, and profile-led trust signals.',
-    role: 'Featured project • Backend, profile pages, ratings',
-    image: '/images/projects/hospitality-hub.png',
-    technologies: ['Python', 'Django', 'PostgreSQL', 'React', 'Express'],
-    githubUrl: 'https://github.com/miskhill/Project4#readme',
+      'A full-stack admin app for managing an interview question bank with a typed ASP.NET Core API, Angular 21 frontend, and MongoDB-backed CRUD flows.',
+    role: 'Featured project • Angular 21, ASP.NET Core, MongoDB',
+    image: '/images/projects/question-manager.png',
+    technologies: ['Angular', 'C#', 'ASP.NET Core', 'MongoDB'],
+    githubUrl: 'https://github.com/miskhill/question-manager#readme',
     featured: true,
   },
   {
-    title: 'GCW Esports',
+    title: 'Annual Media',
     summary:
-      'A themed esports discovery experience focused on game ratings, browsing, and community engagement.',
-    role: 'Featured project • Backend setup, likes, views, styling',
-    image: '/images/projects/gcw-esports.png',
-    technologies: ['React', 'Express', 'MongoDB', 'Mongoose'],
-    githubUrl: 'https://github.com/CosmasC128/Project-3#readme',
+      'A production-style media tracker frontend with protected routes, search, filters, pagination, and admin upload flows for films, series, and books.',
+    role: 'Featured project • React product frontend, auth, testing',
+    image: '/images/projects/annual-media.png',
+    technologies: ['React', 'Vite', 'Material UI', 'JavaScript'],
+    githubUrl: 'https://github.com/miskhill/AnnualMediaFrontEnd#readme',
+    liveUrl: 'https://annual-media-front-end.vercel.app/',
+    featured: true,
+  },
+  {
+    title: 'Learning Tracker Mobile',
+    summary:
+      'A React Native learning companion built around offline-first study flows, queued sync, notifications, and a GraphQL-backed mobile data layer.',
+    role: 'Featured project • React Native, Expo, offline sync',
+    image: '/images/projects/learning-tracker-mobile.svg',
+    technologies: ['React Native', 'TypeScript', 'GraphQL', 'Expo'],
+    githubUrl: 'https://github.com/miskhill/learning-tracker-mobile#readme',
     featured: true,
   },
   {
@@ -46,32 +57,43 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    title: 'Connect 4',
-    summary: 'A polished browser version of the classic desktop game built as a focused solo project.',
-    role: 'Solo project • Core gameplay and UI',
-    image: '/images/projects/connect-4.png',
-    technologies: ['JavaScript', 'CSS', 'HTML'],
-    githubUrl: 'https://github.com/miskhill/Project1#readme',
-    liveUrl: 'https://miskhill.github.io/Project1/',
-  },
-  {
-    title: 'Random Movie Generator',
+    title: 'Learning Tracker API',
     summary:
-      'A quick decision-making app that uses external API data to cut down the time spent choosing a film.',
-    role: 'Pair project • API integration and data handling',
-    image: '/images/projects/random-movie-generator.png',
-    technologies: ['React', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'],
-    githubUrl: 'https://github.com/miskhill/Project-2#readme',
-    liveUrl: 'https://movieproject2.netlify.app',
+      'A GraphQL backend for learning topics and flashcards, combining TypeScript, Apollo Server, TypeORM, and PostgreSQL into a cleaner API architecture story.',
+    role: 'Featured project • GraphQL API, TypeORM, PostgreSQL',
+    image: '/images/projects/learning-tracker-api.svg',
+    technologies: ['TypeScript', 'GraphQL', 'PostgreSQL', 'Node.js'],
+    githubUrl: 'https://github.com/miskhill/learning-tracker#readme',
+    featured: true,
   },
   {
-    title: 'Smoothie App',
-    summary: 'A lightweight CRUD-style app for recipe management built with React and Supabase.',
-    role: 'Solo project • Frontend and backend integration',
-    image: '/images/projects/smoothie-app.png',
-    technologies: ['React', 'Supabase', 'JavaScript'],
-    githubUrl: 'https://github.com/miskhill/Supabase-and-React#readme',
-    liveUrl: 'https://smoothie-app.netlify.app/',
+    title: 'Hospitality Hub',
+    summary:
+      'A 2021 time-constrained group showcase project: a hiring platform for hospitality businesses with account flows, job matching, and profile-led trust signals.',
+    role: 'Featured project • 2021 group showcase sprint, Django backend',
+    image: '/images/projects/hospitality-hub.png',
+    technologies: ['Python', 'Django', 'PostgreSQL', 'React', 'Express'],
+    githubUrl: 'https://github.com/miskhill/Project4#readme',
+    featured: true,
+  },
+  {
+    title: 'GCW Esports',
+    summary:
+      'A 2022 time-constrained group showcase project: a themed esports discovery experience focused on game ratings, browsing, and community engagement.',
+    role: 'Featured project • 2022 group showcase sprint, MERN build',
+    image: '/images/projects/gcw-esports.png',
+    technologies: ['React', 'Express', 'MongoDB', 'Mongoose'],
+    githubUrl: 'https://github.com/CosmasC128/Project-3#readme',
+    featured: true,
+  },
+  {
+    title: 'Salon Dashboard Demo',
+    summary:
+      'A compact Ember.js dashboard demo that broadens the portfolio beyond the usual React stack with TypeScript routes and Tailwind styling.',
+    role: 'Supporting project • Ember.js, TypeScript, Tailwind',
+    image: '/images/projects/salon-dashboard-demo.svg',
+    technologies: ['TypeScript', 'Ember.js', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/miskhill/salon-dashboard-demo#readme',
   },
 ];
 
