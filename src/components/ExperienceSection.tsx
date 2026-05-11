@@ -28,6 +28,7 @@ const careerEntries: JourneyEntry[] = [
     tags: ['React', 'React Native', 'TypeScript', 'C#'],
     points: [
       'Building and maintaining product features across React, React Native, and TypeScript user journeys.',
+      'Delivered a full-stack localisation system across GraphQL, admin web tooling, and React Native, using AI-assisted translation suggestions and approval flows to reduce manual localisation cost.',
       'Helping move core systems toward Postgres and .NET while keeping delivery pace steady.',
       'Improving test coverage, reliability, and release confidence across frontend and backend code.',
     ],
